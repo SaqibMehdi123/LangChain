@@ -1,0 +1,13 @@
+Output Parsers:
+--> help in converting the LLM output into a structured formats like JSON, XML, CSV, Pydantic models, and more. They ensure consistency, validation, and ease of use when working with LLM-generated data.
+
+Output parsers can be used with both type of models 
+i. that give structured outputs by default 
+ii. those do not give the structured output by default
+
+Four Types of Output Parsers will be covered:
+i. String Parsers
+ii. JSON Output Parsers
+iii. Structured Parsers
+iv. Pydantic model Parsers
+

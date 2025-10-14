@@ -1,0 +1,31 @@
+# Environment variables
+.env
+
+# Python virtual environment
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+
+# Exclude rag_app folder
+rag_app/
+
+# Exclude large PDF files
+7. LangChain Document Loaders/Books/*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
