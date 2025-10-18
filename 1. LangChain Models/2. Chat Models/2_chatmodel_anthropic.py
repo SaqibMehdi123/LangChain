@@ -1,8 +1,10 @@
 from langchain_anthropic import ChatAnthropic
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
+import os
 
-load_dotenv()
-
+load_dotenv(find_dotenv(filename=".env", usecwd=True))
+api_key = os.getenv("GOOGLE_API_KEY")
+print(f"GOOGLE_API_KEY loaded: {'YES' if api_key else 'NO'}")
 
 model = ChatAnthropic(
     model="claude-2",

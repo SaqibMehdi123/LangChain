@@ -12,14 +12,16 @@
 # ----------------------------------------------------------
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 
-load_dotenv()
+load_dotenv(find_dotenv(filename=".env", usecwd=True))
+api_key = os.getenv("GOOGLE_API_KEY")
+print(f"GOOGLE_API_KEY loaded: {'YES' if api_key else 'NO'}")
 
 embeddings = GoogleGenerativeAIEmbeddings(
 	model="models/gemini-embedding-001",
-	google_api_key=os.getenv("GOOGLE_API_KEY")
+	google_api_key=api_key
 )
 query = "Islamabad is the capital of Pakistan."
 vector = embeddings.embed_query(query)

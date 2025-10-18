@@ -1,10 +1,12 @@
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-load_dotenv()
+load_dotenv(find_dotenv(filename=".env", usecwd=True))
+api_key = os.getenv("GOOGLE_API_KEY")
+print(f"GOOGLE_API_KEY loaded: {'YES' if api_key else 'NO'}")
 
 embedding = GoogleGenerativeAIEmbeddings(
     model="models/gemini-embedding-001",

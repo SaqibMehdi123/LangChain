@@ -1,14 +1,16 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_google_genai import GoogleGenerativeAI
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 
-load_dotenv()
+load_dotenv(find_dotenv(filename=".env", usecwd=True))
+api_key = os.getenv("GOOGLE_API_KEY")
+print(f"GOOGLE_API_KEY loaded: {'YES' if api_key else 'NO'}")
 
 model = GoogleGenerativeAI(
     model='gemini-1.5-flash',
     temperature=0.5,
-    google_api_key = os.getenv("GOOGLE_API_KEY")
+    google_api_key=api_key
 )
 
 # chat template

@@ -1,8 +1,10 @@
 from langchain_huggingface import HuggingFaceEndpoint
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 
-load_dotenv()
+load_dotenv(find_dotenv(filename=".env", usecwd=True))
+api_key = os.getenv("GOOGLE_API_KEY")
+print(f"GOOGLE_API_KEY loaded: {'YES' if api_key else 'NO'}")
 
 embeddings = HuggingFaceEndpoint(
 	repo_id="Qwen/Qwen3-Embedding-8B",
