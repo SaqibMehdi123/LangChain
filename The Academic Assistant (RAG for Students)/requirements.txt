@@ -1,0 +1,9 @@
+streamlit
+langchain-google-genai
+langchain
+langchain-chroma
+chromadb
+pypdf
+docx2txt
+streamlit-authenticator
+PyYAML

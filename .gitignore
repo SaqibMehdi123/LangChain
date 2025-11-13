@@ -22,6 +22,7 @@ __pycache__/
 
 # Exclude rag_app folder
 rag_app/
+extra rag/
 
 # Exclude large PDF files
 7. LangChain Document Loaders/Books/*.pdf
@@ -29,3 +30,14 @@ rag_app/
 # OS files
 .DS_Store
 Thumbs.db
+
+*.sqlite3
+*.db
+.streamlit/secrets.toml
+chroma_db/
+user_chats/
+Books/
+config.yaml
+chat_history.json
+user_chats/
+persistent_chroma_db/

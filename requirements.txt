@@ -25,3 +25,6 @@ python-dotenv
 numpy
 scikit-learn
 
+faiss-cpu
+# vector stores
+langchain-chroma
