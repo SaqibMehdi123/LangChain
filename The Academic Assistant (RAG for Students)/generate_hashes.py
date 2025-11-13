@@ -3,11 +3,7 @@ import yaml
 from yaml.loader import SafeLoader
 import sys
 
-# ---
-# This is a one-time tool to create your 'config.yaml' file.
-# ---
-
-# --- STEP 1: Define your users and their plain-text passwords ---
+# --- Define your users and their plain-text passwords ---
 # Add or remove users here as you wish.
 users_to_create = {
     "jsmith": {
@@ -22,7 +18,7 @@ users_to_create = {
     }
 }
 
-# --- STEP 2: Hash the passwords (THE CORRECT WAY) ---
+# --- Hash the passwords (THE CORRECT WAY) ---
 hashed_creds = {"usernames": {}}
 
 # Create a single Hasher instance
@@ -49,7 +45,7 @@ for username, details in users_to_create.items():
         "password": hashed_password
     }
 
-# --- STEP 3: Define the rest of the config ---
+# --- Define the rest of the config ---
 config_data = {
     "credentials": hashed_creds,
     "cookie": {
@@ -60,7 +56,7 @@ config_data = {
     # We correctly omit the 'preauthorized' key
 }
 
-# --- STEP 4: Write the config.yaml file automatically ---
+# --- Write the config.yaml file automatically ---
 try:
     with open('config.yaml', 'w') as file:
         yaml.dump(config_data, file, default_flow_style=False)
